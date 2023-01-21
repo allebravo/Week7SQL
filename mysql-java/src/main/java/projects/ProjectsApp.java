@@ -24,7 +24,7 @@ public class ProjectsApp {
 		public static void main(String[] args) {
 
 		new ProjectsApp().processUserSelections();
-		}//end of main method
+	}//end of main method
 
 		private void processUserSelections() {
 			boolean done = false;
@@ -90,10 +90,10 @@ public class ProjectsApp {
 
 		private void createProject() {
 			String projectName = getStringInput("Enter the project name");
-			BigDecimal estimatedHours	= getDecimalInput("Enter the estimated hours");
+			BigDecimal estimatedHours = getDecimalInput("Enter the estimated hours");
 			BigDecimal actualHours = getDecimalInput("Enter the actual hours"); 
-			Integer difficulty 	= getIntInput("Enter the project difficulty (1-5)"); 
-			String 	notes 	= getStringInput("Enter the project notes");
+			Integer difficulty = getIntInput("Enter the project difficulty (1-5)"); 
+			String notes = getStringInput("Enter the project notes");
 			
 			Project project = new Project();
 			
