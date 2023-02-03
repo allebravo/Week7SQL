@@ -3,7 +3,6 @@ package projects.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import projects.exception.DbException;
 
 public class DbConnection {
@@ -14,16 +13,18 @@ public class DbConnection {
 	private static String USER = "projects";
 	
 	public static Connection getConnection() {
-		String url = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s", 
-				HOST, PORT, SCHEMA,USER,PASSWORD);
+//		String url = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s", 
+//				HOST, PORT, SCHEMA,USER,PASSWORD);
+		String url = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s&useSSL=false", HOST, PORT, SCHEMA, USER, PASSWORD);
 		
 		System.out.println("Connecting with URI =" + url );
 		
 		try {
 			Connection conn = DriverManager.getConnection(url);
-			System.out.println("Successfull obtained connections!");
+			System.out.println("Successful obtained connections!");
 			return conn;
 		} catch (SQLException e) {
+			System.out.println("Error getting connection");
 		  throw new DbException(e);
 		}		
 	}
